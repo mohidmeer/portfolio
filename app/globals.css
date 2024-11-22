@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,5 +76,35 @@ h1{
   }
 }
 
+.pgbar{
 
+  transform-origin:0;
+}
 
+.movingborder {
+  @apply rounded-lg border
+  relative 
+}
+/* @property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.movingborder::before, 
+.movingborder::after {
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--card),
+    var(--background)
+  );
+  inset: -5rem;
+  padding: 30;
+  z-index: 10;
+}
+.movingborder::before{
+  filter: blur(0.5rem);
+} */

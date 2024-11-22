@@ -20,9 +20,9 @@ const Hero = () => {
               delaySpeed={1000}
             />
           </h1>
-          <p className="text-2xl"> Full-Stack Web Developer with over 5 years of experience crafting web solutions. Whether its building robust APIs, creating stunning UIs, or deploying applications.</p>
+          <p className="text-xl max-w-md text-muted-foreground "> Full-Stack Web Developer with over 5 years of experience crafting web solutions. Whether its building robust APIs, creating stunning UIs, or deploying applications.</p>
         </div>
-        <div className=" w-full justify-center flex  ">
+        <div className=" w-full justify-center flex">
 
           <SideArt />
 
