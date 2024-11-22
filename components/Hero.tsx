@@ -1,5 +1,4 @@
 'use client';
-import { Circle, Square, Star } from "lucide-react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter"
 
