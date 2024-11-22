@@ -64,6 +64,7 @@ function Skills() {
     { skill: "mongodb", proficiency: 45, fill: "hsl(141, 37%, 49%)" },
     { skill: "mysql", proficiency: 55, fill: "hsl(197, 71%, 63%)" },
     { skill: "php", proficiency: 50, fill: "hsl(240, 35%, 55%)" },
+    { skill: "laravel", proficiency: 56, fill: "hsl(240, 35%, 55%)" },
   ];
 
   const chartConfig = {
@@ -84,6 +85,10 @@ function Skills() {
     },
     php: {
       label: "PHP",
+      color: "hsl(240, 35%, 55%)", // PHP Indigo
+    },
+    laravel: {
+      label: "Laravel",
       color: "hsl(240, 35%, 55%)", // PHP Indigo
     },
     aws: {

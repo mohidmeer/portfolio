@@ -80,10 +80,7 @@ const config = {
         'spin-slow': 'spin 100s linear infinite', 
         'counter-spin-slow': 'counter-spin 100s linear infinite',  
       },
-      backgroundImage: {
-        "hero-pattern": "url('/assets/hero.svg')",
-        "hero-pattern-dark": "url('/assets/herodark.svg')",
-      },
+      
     },
   },
   plugins: [require("tailwindcss-animate")],

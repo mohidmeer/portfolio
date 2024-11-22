@@ -4,7 +4,10 @@ import { Typewriter } from "react-simple-typewriter"
 
 const Hero = () => {
   return (
-    <div className="h-[80vh]  bg-hero-pattern dark:bg-hero-pattern-dark  bg-no-repeat bg-cover mt-20 " >
+    <div className="h-[80vh] relative mt-20 bg-no-repeat bg-cover " >
+
+      <Image src={'assets/hero.svg'} fill alt="hero" 
+      className="object-cover filter  " />
 
       <div className="flex max-w-6xl mx-auto ">
         <div className="p-2 w-full flex flex-col justify-center  ">
