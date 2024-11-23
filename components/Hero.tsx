@@ -1,16 +1,15 @@
 'use client';
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter"
+import SpotLight from "./SpotLight";
 
 const Hero = () => {
   return (
     <div className="h-[80vh] relative mt-20 bg-no-repeat bg-cover " >
 
-      <Image src={'assets/hero.svg'} fill alt="hero" 
-      className="object-cover filter  " />
-
-      <div className="flex max-w-6xl mx-auto ">
-        <div className="p-2 w-full flex flex-col justify-center  ">
+      <Image src={'assets/hero.svg'} fill alt="hero" className="object-cover filter" />
+      <div className="flex md:flex-row flex-col max-w-6xl mx-auto ">
+        <div className="p-2 w-full flex flex-col justify-center  md:order-1 order-2  ">
           <h1 className="w-full">
             Hi, I am
             <Typewriter
@@ -25,14 +24,14 @@ const Hero = () => {
           </h1>
           <p className="text-xl max-w-md text-muted-foreground "> Full-Stack Web Developer with over 5 years of experience crafting web solutions. Whether its building robust APIs, creating stunning UIs, or deploying applications.</p>
         </div>
-        <div className=" w-full justify-center flex">
-
+        <div className=" w-full justify-center flex md:order-2 order-1  ">
           <SideArt />
-
         </div>
 
       </div>
-
+      <SpotLight className={'-top-[60%] -left-32 bg-primary blur-[300px] '} size={400} />
+      <SpotLight className={'-top-[80%]  left-[35%] bg-primary blur-[300px] '} size={400} />
+      <SpotLight className={'-bottom-36 right-0 bg-primary/50 blur-[200px]'} size={400} />
 
     </div>
   )
@@ -66,7 +65,6 @@ function SideArt() {
     'assets/icon/nginx.svg',
     'assets/icon/gcloud.svg',
     'assets/icon/amazon.svg',
-    
   ];
 
   const midpoint = Math.ceil(files.length / 2);
@@ -88,7 +86,7 @@ function SideArt() {
             className="absolute w-full  "
             style={{ transform: `rotate(${rotation}deg)` }}
           >
-            <div className="  rounded-full  relative w-20 h-20 animate-counter-spin-slow"
+            <div className="rounded-full  relative h-16 w-16  md:w-20 md:h-20 animate-counter-spin-slow"
               style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
             >
               <Image src={file} alt={`icon-${index}`} fill />
@@ -107,8 +105,8 @@ function SideArt() {
               className="absolute w-[65%]"
               style={{ transform: `rotate(${rotation}deg)` }}
             >
-              <div className="  rounded-full   relative w-14 h-14  animate-counter-spin-slow select-none "
-                 style={{  animationDelay: `-${(rotation / 360) * 100}s`}}
+              <div className="  rounded-full   relative h-12 w-12  md:w-14 md:h-14  animate-counter-spin-slow select-none "
+                style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
               >
                 <Image src={file} alt={`icon-${index}`} fill className="rotate-[-30deg] select-none   " />
               </div>
@@ -117,10 +115,20 @@ function SideArt() {
         })}
       </div>
 
+      <div className="    absolute ">
+        <div className="rounded-full  relative w-20 h-20 animate-counter-spin-slow"
+        // style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
+        >
+          <Image src={'assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill />
+        </div>
+
+
+
+      </div>
+
     </div>
 
   );
 }
-
 
 
