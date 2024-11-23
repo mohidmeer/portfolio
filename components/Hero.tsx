@@ -25,13 +25,16 @@ const Hero = () => {
           <p className="text-xl max-w-md text-muted-foreground "> Full-Stack Web Developer with over 5 years of experience crafting web solutions. Whether its building robust APIs, creating stunning UIs, or deploying applications.</p>
         </div>
         <div className=" w-full justify-center flex md:order-2 order-1  ">
+
           <SideArt />
+
         </div>
 
       </div>
-      <SpotLight className={'-top-[60%] -left-32 bg-primary blur-[300px] '} size={400} />
-      <SpotLight className={'-top-[80%]  left-[35%] bg-primary blur-[300px] '} size={400} />
-      <SpotLight className={'-bottom-36 right-0 bg-primary/50 blur-[200px]'} size={400} />
+
+      <SpotLight clas={'-top-[60%] -left-32 bg-primary/50 blur-[300px]  w-[400px] h-[400px] '}  />
+      <SpotLight clas={'-top-[80%]  left-[35%] bg-primary/50 blur-[300px]  w-[400px] h-[400px] '}  />
+      <SpotLight clas={'-bottom-36 right-0 bg-primary/50 blur-[300px] w-[400px] h-[400px] '}  />
 
     </div>
   )

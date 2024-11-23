@@ -1,6 +1,5 @@
-export default function SpotLight ({className,size}:{className:string,size:number}){
-    return <div className={`${className} absolute rounded-full w-[${size}px] h-[${size}px] `} />
-  
+export default function SpotLight ({clas}:{clas:string}){
+    return <div className={`${clas} absolute rounded-full`} />
     
   }
   

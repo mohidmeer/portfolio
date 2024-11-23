@@ -24,7 +24,7 @@ export default function Home() {
 
     <main className="flex flex-col gap-4 relative ">
       <motion.div className="fixed top-0 left-0 w-full h-[2px] bg-primary z-10 " style={{ scaleX, transformOrigin: 0 }} />
-      <div className="absolute h-full w-full   z-10 ">
+      <div className="absolute h-full w-[20px]  ">
         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 2676" width="400" height="2676"   >
           <motion.path initial={false}
             strokeDasharray="0 1" strokeWidth="3" className="stroke-primary" style={{ pathLength }}
