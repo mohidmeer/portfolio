@@ -3,9 +3,8 @@ import Heading from "@/components/Heading";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { useScroll, motion, useSpring, transform, MotionValue, useTransform } from "framer-motion";
+import { useScroll, motion, useSpring, useTransform } from "framer-motion";
 import { Kanban, Network, Server, Users } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 
@@ -21,49 +20,17 @@ export default function Home() {
   const pathLength = useSpring(yRange, { stiffness: 200, damping: 90, restDelta: 0.001 });
 
 
-  const pathRef = useRef<SVGPathElement>(null);
-  const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
-
-  // Use a ref to hold the scrollYProgress value and trigger updates manually
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Subscribe to the scroll progress value
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((latestValue) => {
-      setScrollProgress(latestValue); // Update scroll progress
-    });
-
-    return () => unsubscribe(); // Clean up on component unmount
-  }, [scrollYProgress]);
-
-  // Update the circle position when scrollProgress changes
-  useEffect(() => {
-    if (pathRef.current) {
-      const path = pathRef.current;
-      const totalLength = path.getTotalLength(); // Get the total length of the path
-
-      // Make sure pathLength covers the full length of the path
-      const position = path.getPointAtLength((totalLength * scrollProgress+200)); // Get the position along the path
-
-      // Set the circle's position based on the calculated position
-      setCirclePosition({ x: position.x, y: position.y });
-    }
-  }, [scrollProgress]);
   return (
 
     <main className="flex flex-col gap-4 relative ">
       <motion.div className="fixed top-0 left-0 w-full h-[2px] bg-primary z-10 " style={{ scaleX, transformOrigin: 0 }} />
       <div className="absolute h-full w-full   z-10 ">
         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 2676" width="400" height="2676"   >
-          <motion.path ref={pathRef} initial={false}
+          <motion.path initial={false}
             strokeDasharray="0 1" strokeWidth="3" className="stroke-primary" style={{ pathLength }}
             fill={'none'}
             d="M0.5 0V139L196 321V529L91.5 638V879L170.5 1037V1394L236.5 1448V1551L170.5 1601.5V2029L303 2166V2316.5L170.5 2403V2492.5V2540"
           />
-          
-      
-      
-
         </svg>
       </div>
       <NavBar />
