@@ -5,12 +5,12 @@ import SpotLight from "./SpotLight";
 
 const Hero = () => {
   return (
-    <div className="h-[80vh] relative mt-20 bg-no-repeat bg-cover " >
+    <div className="mih-h-[70vh] relative mt-20 bg-no-repeat bg-cover " id="about" >
 
       <Image src={'assets/hero.svg'} fill alt="hero" className="object-cover filter" />
-      <div className="flex md:flex-row flex-col max-w-6xl mx-auto ">
-        <div className="p-2 w-full flex flex-col justify-center  md:order-1 order-2  ">
-          <h1 className="w-full">
+      <div className=" grid lg:grid-cols-2 grid-cols-1  max-w-6xl mx-auto ">
+        <div className="p-2 w-full flex flex-col justify-center items-center  lg:order-1 order-2 relative   ">
+          <h1 className="w-full text-center  ">
             Hi, I am
             <Typewriter
               words={[' Mohid']}
@@ -23,18 +23,17 @@ const Hero = () => {
             />
           </h1>
           <p className="text-xl max-w-md text-muted-foreground "> Full-Stack Web Developer with over 5 years of experience crafting web solutions. Whether its building robust APIs, creating stunning UIs, or deploying applications.</p>
+
         </div>
-        <div className=" w-full justify-center flex md:order-2 order-1  ">
-
+        <div className=" w-full justify-center flex lg:order-2 order-1  ">
           <SideArt />
-
         </div>
 
       </div>
 
-      <SpotLight clas={'-top-[60%] -left-32 bg-primary/50 blur-[300px]  w-[400px] h-[400px] '}  />
-      <SpotLight clas={'-top-[80%]  left-[35%] bg-primary/50 blur-[300px]  w-[400px] h-[400px] '}  />
-      <SpotLight clas={'-bottom-36 right-0 bg-primary/50 blur-[300px] w-[400px] h-[400px] '}  />
+      <SpotLight clas={'-top-[60%] -left-32 bg-primary/50 blur-[300px]  w-[400px] h-[400px] '} />
+      <SpotLight clas={'-top-[80%]  left-[35%] bg-primary/50 blur-[300px]  w-[400px] h-[400px] '} />
+      <SpotLight clas={'-bottom-36 right-0 bg-primary/50 blur-[300px] w-[400px] h-[400px] '} />
 
     </div>
   )
@@ -61,7 +60,7 @@ function SideArt() {
     'assets/icon/laravel.svg',
     'assets/icon/figma.svg',
     'assets/icon/css.svg',
-    'assets/icon/github.svg',
+    'assets/icon/git.svg',
     'assets/icon/jira.svg',
     'assets/icon/python.svg',
     'assets/icon/graphql.svg',
@@ -79,8 +78,8 @@ function SideArt() {
   const degreeIncrementSecondhalf = 360 / secondHalf.length;
 
   return (
-    <div className="relative flex justify-center items-center  rounded-full w-[600px] h-[600px] animate-spin-slow select-none ">
-      <div className="rounded-full w-[88%] h-[88%] border-2 absolute" />
+    <div className="relative flex justify-center items-center  rounded-full h-[400px] w-[400px] md:h-[400px]  md:w-[400px] lg:w-[500px] lg:h-[500px]  xl:w-[600px] xl:h-[600px] animate-spin-slow select-none ">
+      
       {firstHalf.map((file, index) => {
         const rotation = index * degreeIncrementFirsthalf;
         return (
@@ -89,9 +88,7 @@ function SideArt() {
             className="absolute w-full  "
             style={{ transform: `rotate(${rotation}deg)` }}
           >
-            <div className="rounded-full  relative h-16 w-16  md:w-20 md:h-20 animate-counter-spin-slow"
-              style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
-            >
+            <div className="rounded-full relative h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16  lg:w-20 lg:h-20 animate-counter-spin-slow" style={{ animationDelay: `-${(rotation / 360) * 100}s` }}>
               <Image src={file} alt={`icon-${index}`} fill />
             </div>
           </div>
@@ -108,7 +105,7 @@ function SideArt() {
               className="absolute w-[65%]"
               style={{ transform: `rotate(${rotation}deg)` }}
             >
-              <div className="  rounded-full   relative h-12 w-12  md:w-14 md:h-14  animate-counter-spin-slow select-none "
+              <div className="  rounded-full   relative h-10 w-10 md:h-12 md:w-12  lg:w-14 lg:h-14  animate-counter-spin-slow select-none "
                 style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
               >
                 <Image src={file} alt={`icon-${index}`} fill className="rotate-[-30deg] select-none   " />
@@ -118,10 +115,8 @@ function SideArt() {
         })}
       </div>
 
-      <div className="    absolute ">
-        <div className="rounded-full  relative w-20 h-20 animate-counter-spin-slow"
-        // style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
-        >
+      <div className="absolute">
+        <div className="rounded-full relative  w-10 h-10  sm:w-20 sm:h-20 animate-counter-spin-slow">
           <Image src={'assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill />
         </div>
 
