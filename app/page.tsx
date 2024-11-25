@@ -272,7 +272,7 @@ function Projects() {
             subtitle: 'Seamless Social Media Management',
             description: 'Simplify financial software purchasing with demo access. Automate setup for seamless user onboarding.',
             github: 'https://github.com/dreamrs-io/pocketcfo-frontend.git',
-            stack: ['nextjs.svg', 'tailwindcss.svg', 'mongoDb.svg', 'stripe.svg'],
+            stack: ['nextjs.svg', 'tailwindcss.svg', 'mongodb.svg', 'stripe.svg'],
             images: [
               {
                 title: 'Login',
@@ -380,11 +380,10 @@ const ProjectCard = ({ data }: { data: any }) => (
             </DialogHeader>
           </DialogContent>
         </Dialog>
-
       </div>
       <div className="flex flex-wrap gap-4 items-center py-2">
         {data.stack.map((i: string, z: number) => (
-          <TechChip key={z} image={'assets/icon/' + i} />
+          <TechChip key={z} image={'assets/icon/'+i} />
         ))}
       </div>
     </div>
