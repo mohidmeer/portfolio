@@ -230,7 +230,7 @@ function Projects() {
       <div className="grid  md:grid-cols-2 lg:grid-cols-3  max-w-7xl mx-auto gap-6 mb-10 ">
         <ProjectCard
           data={{
-            logo: '/assets/projects/socialmint/logo.png',
+            logo: 'assets/projects/socialmint/logo.png',
             title: 'Social Mint',
             subtitle: 'Seamless Social Media Management',
             description: 'Link and manage all social media accounts, schedule posts, and post with one click to all major socail media platforms',
@@ -267,7 +267,7 @@ function Projects() {
         />
         <ProjectCard
           data={{
-            logo: '/assets/projects/pcfo/logo.svg',
+            logo: 'assets/projects/pcfo/logo.svg',
             title: 'Pocket CFO',
             subtitle: 'Seamless Social Media Management',
             description: 'Simplify financial software purchasing with demo access. Automate setup for seamless user onboarding.',
@@ -292,12 +292,12 @@ function Projects() {
         />
         <ProjectCard
           data={{
-            logo: '/assets/projects/promptworks/logo.svg',
+            logo: 'assets/projects/promptworks/logo.svg',
             title: 'Prompt Buddy',
             subtitle: 'AI Prompt Marketplace',
             description: 'A marketplace for quality AI prompts, including DALL·E, Midjourney, ChatGPT, and Stable Diffusion. Buy and sell custom prompts to generate high-quality images and save on API costs.',
             github: 'https://github.com/mohidmeer/prompt.git',
-            stack: ['nextjs.svg', 'tailwindcss.svg', 'zustand.svg', 'mongoDb.svg', 'stripe.svg'],
+            stack: ['nextjs.svg', 'tailwindcss.svg', 'zustand.svg', 'mongodb.svg', 'stripe.svg'],
             images: [
               {
                 title: 'Login',
