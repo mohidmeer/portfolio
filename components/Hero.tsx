@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="mih-h-[70vh] relative mt-20 bg-no-repeat bg-cover " id="about" >
 
-      <Image src={'assets/hero.svg'} fill alt="hero" className="object-cover filter" />
+      <Image src={'/assets/hero.svg'} fill alt="hero" className="object-cover filter" />
       <div className=" grid lg:grid-cols-2 grid-cols-1  max-w-6xl mx-auto ">
         <div className="p-2 w-full flex flex-col justify-center items-center  lg:order-1 order-2 relative   ">
           <h1 className="w-full text-center  ">
@@ -48,25 +48,25 @@ function SideArt() {
 
 
   const files = [
-    'assets/icon/docker.svg',
-    'assets/icon/mongodb.svg',
-    'assets/icon/vs-code.svg',
-    'assets/icon/react.svg',
-    'assets/icon/nextjs.svg',
-    'assets/icon/typescript.svg',
-    'assets/icon/prisma.svg',
-    'assets/icon/postgresql.svg',
-    'assets/icon/html.svg',
-    'assets/icon/laravel.svg',
-    'assets/icon/figma.svg',
-    'assets/icon/css.svg',
-    'assets/icon/git.svg',
-    'assets/icon/jira.svg',
-    'assets/icon/python.svg',
-    'assets/icon/graphql.svg',
-    'assets/icon/nginx.svg',
-    'assets/icon/gcloud.svg',
-    'assets/icon/amazon.svg',
+    '/assets/icon/docker.svg',
+    '/assets/icon/mongodb.svg',
+    '/assets/icon/vs-code.svg',
+    '/assets/icon/react.svg',
+    '/assets/icon/nextjs.svg',
+    '/assets/icon/typescript.svg',
+    '/assets/icon/prisma.svg',
+    '/assets/icon/postgresql.svg',
+    '/assets/icon/html.svg',
+    '/assets/icon/laravel.svg',
+    '/assets/icon/figma.svg',
+    '/assets/icon/css.svg',
+    '/assets/icon/git.svg',
+    '/assets/icon/jira.svg',
+    '/assets/icon/python.svg',
+    '/assets/icon/graphql.svg',
+    '/assets/icon/nginx.svg',
+    '/assets/icon/gcloud.svg',
+    '/assets/icon/amazon.svg',
   ];
 
   const midpoint = Math.ceil(files.length / 2);
@@ -117,7 +117,7 @@ function SideArt() {
 
       <div className="absolute">
         <div className="rounded-full relative  w-10 h-10  sm:w-20 sm:h-20 animate-counter-spin-slow">
-          <Image src={'assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill />
+          <Image src={'/assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill />
         </div>
 
 

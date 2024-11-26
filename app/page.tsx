@@ -223,6 +223,7 @@ function Skills() {
 }
 
 
+
 function Projects() {
   return (
     <div className="mb" id="projects" >
@@ -350,7 +351,7 @@ const ProjectCard = ({ data }: { data: any }) => (
           <DialogTrigger className={buttonVariants({ variant: "outline", size: 'sm' })} >
             View Details
           </DialogTrigger>
-          <DialogContent className="w-[70%]  max-w-full   overflow-hidden ">
+          <DialogContent className=" sm:w-[70%]  max-w-full   overflow-hidden ">
             <DialogHeader>
               <DialogDescription >
                 <div className="overflow-auto max-h-[70vh] flex flex-col gap-4 scrollbar-custom p-2 text-foreground">
@@ -358,7 +359,7 @@ const ProjectCard = ({ data }: { data: any }) => (
                     data.images.map((i: any, z: any) => (
                       <div key={z} className="flex flex-col gap-2">
                         {/* Sticky Title */}
-                        <h4 className="text-3xl font-extrabold text-foreground sticky top-0  z-10 px-2 text-center  flex justify-center items-center">
+                        <h4 className=" text-foreground sticky top-0  z-10 px-2 text-center  flex justify-center items-center">
                           <span className=" px-4 py-2 rounded-md bg-background  ">
                             {i.title}
                           </span>
