@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
-    basePath: '/portfolio',
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'mohidmeer.github.io',
+                port: '',
+                pathname: '/**',
+              },
+        ]
+    }
 };
 
 export default nextConfig;

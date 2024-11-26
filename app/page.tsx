@@ -45,6 +45,7 @@ export default function Home() {
       <header className="top-0 z-10  fixed w-full ">
         <NavBar />
       </header>
+      
       <main className=" relative flex flex-col gap-6  scroll-smooth px-2  sm:px-0 overflow-hidden ">
         <motion.div className="fixed top-0 left-0 w-full h-[2px] bg-primary z-10 " style={{ scaleX, transformOrigin: 0 }} />
         <TracingLine pathLength={pathLength} />
@@ -335,7 +336,7 @@ const ProjectCard = ({ data }: { data: any }) => (
   <div className="flash-effect border h-full rounded-md relative flex flex-col gap-6 p-4 cursor-pointer bg-card shadow-md group overflow-hidden ">
     <div className="flex flex-col gap-3 flex-grow">
       <div className="flex justify-between items-center">
-        <Image width={40} height={40} src={data.logo} className="" alt="" />
+        <Image width={40} height={40} src={process.env.NEXT_PUBLIC_URL+data.logo} className="" alt="" />
         <Link href={data.github} className={buttonVariants({ variant: "outline", size: 'icon' })}>
           <Github />
         </Link>
@@ -366,7 +367,7 @@ const ProjectCard = ({ data }: { data: any }) => (
                         </h4>
                         {/* Image */}
                         <Image
-                          src={'/assets/projects/' + i.image}
+                          src={ process.env.NEXT_PUBLIC_URL+'/assets/projects/' + i.image}
                           alt="Project Image"
                           layout="responsive"
                           width={100}
