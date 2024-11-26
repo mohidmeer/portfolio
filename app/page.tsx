@@ -45,7 +45,7 @@ export default function Home() {
       <header className="top-0 z-10  fixed w-full ">
         <NavBar />
       </header>
-      <main className=" relative flex flex-col gap-6  scroll-smooth px-2  sm:px-0 ">
+      <main className=" relative flex flex-col gap-6  scroll-smooth px-2  sm:px-0 overflow-hidden ">
         <motion.div className="fixed top-0 left-0 w-full h-[2px] bg-primary z-10 " style={{ scaleX, transformOrigin: 0 }} />
         <TracingLine pathLength={pathLength} />
         <Hero />
@@ -68,7 +68,7 @@ function Introduction() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-300">
         <div className="bg-card shadow-md rounded-lg p-6 border flex flex-col gap-4 ">
           <Kanban size={52} className="" />
-          <h2 className="text-2xl font-semibold ">Projects</h2>
+          <h3>Projects</h3>
           <p>
             Delivered 50+ projects across multiple industries, including e-commerce, real estate, finance, and social media.
           </p>
@@ -77,7 +77,7 @@ function Introduction() {
         {/* Card 2: API Integrations */}
         <div className="bg-card shadow-md rounded-lg p-6 border flex flex-col gap-4">
           <Network size={52} className="" />
-          <h2 className="text-2xl font-semibold ">API Integrations</h2>
+          <h3>API Integrations</h3>
           <p>
             Successfully integrated complex APIs from platforms like Facebook and Twitter into custom systems, improving functionality and user experience.
           </p>
@@ -86,7 +86,7 @@ function Introduction() {
         {/* Card 3: Backend System Design */}
         <div className="bg-card shadow-md rounded-lg p-6 border flex flex-col gap-4">
           <Server size={52} className="" />
-          <h2 className="text-2xl font-semibold ">Backend System Design</h2>
+          <h3>Backend System Design</h3>
           <p>
             Designed scalable backend systems with features such as authentication, inventory management, and cloud deployment for seamless operation.
           </p>
@@ -95,7 +95,7 @@ function Introduction() {
         {/* Card 4: Collaborative Teamwork */}
         <div className="bg-card shadow-md rounded-lg p-6 border flex flex-col gap-4">
           <Users size={52} className="" />
-          <h2 className="text-2xl font-semibold ">Collaborative Teamwork</h2>
+          <h3>Collaborative Teamwork</h3>
           <p>
             Worked effectively with remote teams using tools like Jira, Slack, and Agile methodologies to deliver high-quality, timely solutions.
           </p>
@@ -167,7 +167,7 @@ function Skills() {
       <Heading heading="Technical Proficiencies" subheading="A visual breakdown of my core technical skills and proficiencies." />
       <div className="grid lg:grid-cols-2 gap-8" >
         <div className="bg-card shadow-md rounded-lg p-6 border w-full ">
-          <h2 className="text-2xl font-semibold ">Skills That Power My Code</h2>
+          <h3 className="text-2xl font-semibold ">Skills That Power My Code</h3>
           <p className="text-muted-foreground text-lg  mt-4">
             My approach emphasizes practicality—using the tools at hand to deliver effective solutions while continuously refining my skills. Whether it’s designing responsive UIs, managing server-side logic with Node.js, or deploying cloud-based applications with AWS, I focus on writing clean, efficient, and adaptable code. I’m always curious about what’s next, striving to stay ahead in this ever-evolving field.
           </p>
@@ -230,7 +230,7 @@ function Projects() {
       <div className="grid  md:grid-cols-2 lg:grid-cols-3  max-w-7xl mx-auto gap-6 mb-10 ">
         <ProjectCard
           data={{
-            logo: 'assets/projects/socialmint/logo.png',
+            logo: '/assets/projects/socialmint/logo.png',
             title: 'Social Mint',
             subtitle: 'Seamless Social Media Management',
             description: 'Link and manage all social media accounts, schedule posts, and post with one click to all major socail media platforms',
@@ -267,7 +267,7 @@ function Projects() {
         />
         <ProjectCard
           data={{
-            logo: 'assets/projects/pcfo/logo.svg',
+            logo: '/assets/projects/pcfo/logo.svg',
             title: 'Pocket CFO',
             subtitle: 'Seamless Social Media Management',
             description: 'Simplify financial software purchasing with demo access. Automate setup for seamless user onboarding.',
@@ -292,7 +292,7 @@ function Projects() {
         />
         <ProjectCard
           data={{
-            logo: 'assets/projects/promptworks/logo.svg',
+            logo: '/assets/projects/promptworks/logo.svg',
             title: 'Prompt Buddy',
             subtitle: 'AI Prompt Marketplace',
             description: 'A marketplace for quality AI prompts, including DALL·E, Midjourney, ChatGPT, and Stable Diffusion. Buy and sell custom prompts to generate high-quality images and save on API costs.',
@@ -447,12 +447,12 @@ function ContactMe() {
   };
 
   return (
-    <section id="contact" className="p-16 container  mx-auto relative">
+    <section id="contact" className=" container py-12  mx-auto relative">
       <div className="grid md:grid-cols-2 ">
-        <div className="text-center border py-4 rounded-md  ">
+        <div className="text-center border p-4 rounded-md  ">
           <h2 className="text-4xl font-extrabold mb-8">Contact Me</h2>
           <p className="text-lg ">Let&apos;s work together! I look forward to hearing from you.</p>
-          <div className="w-full mx-auto p-8 rounded-2xl bg-card text-card-foreground space-y-8">
+          <div className="w-full mx-auto  rounded-2xl bg-card text-card-foreground space-y-8">
             <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Name Field */}
               <div>
