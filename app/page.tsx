@@ -110,15 +110,15 @@ function Introduction() {
 function Skills() {
 
   const chartData = [
-    { skill: "javascript", proficiency: 60, fill: "hsl(54, 100%, 50%)" },
-    { skill: "typescript", proficiency: 50, fill: "hsl(214, 89%, 52%)" },
-    { skill: "react", proficiency: 70, fill: "hsl(204, 86%, 53%)" },
-    { skill: "nextjs", proficiency: 60, fill: "hsl(0, 0%, 20%)" },
+    { skill: "javascript", proficiency: 80, fill: "hsl(54, 100%, 50%)" },
+    { skill: "typescript", proficiency: 70, fill: "hsl(214, 89%, 52%)" },
+    { skill: "react", proficiency: 80, fill: "hsl(204, 86%, 53%)" },
+    { skill: "nextjs", proficiency: 70, fill: "hsl(0, 0%, 20%)" },
     { skill: "aws", proficiency: 30, fill: "hsl(28, 94%, 54%)" },
-    { skill: "mongodb", proficiency: 45, fill: "hsl(141, 37%, 49%)" },
-    { skill: "mysql", proficiency: 55, fill: "hsl(197, 71%, 63%)" },
+    { skill: "mongodb", proficiency: 70, fill: "hsl(141, 37%, 49%)" },
+    { skill: "mysql", proficiency: 80, fill: "hsl(197, 71%, 63%)" },
     { skill: "php", proficiency: 50, fill: "hsl(240, 35%, 55%)" },
-    { skill: "laravel", proficiency: 56, fill: "hsl(240, 35%, 55%)" },
+    { skill: "laravel", proficiency: 60, fill: "hsl(240, 35%, 55%)" },
   ];
 
   const chartConfig = {
