@@ -19,7 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        mono: ['Ubuntu Mono', 'monospace'],
+        ant: ["Antonio", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -27,6 +28,11 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        val: {
+          primary: "#3fdacd",     
+          secondary: "#FF4655",   
+          tertiary: "#FF9A3D",    
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

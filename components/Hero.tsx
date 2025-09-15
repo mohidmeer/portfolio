@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter"
 import SpotLight from "./SpotLight";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -116,8 +117,9 @@ function SideArt() {
       </div>
 
       <div className="absolute">
-        <div className="rounded-full relative  w-10 h-10  sm:w-20 sm:h-20 animate-counter-spin-slow">
-          <Image src={'assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill />
+        <div  className="rounded-full relative  w-10 h-10  sm:w-20 sm:h-20 animate-counter-spin-slow">
+          <Link href={'/val'} ><Image src={'assets/icon/valorant.svg'} alt={`icon-valoarnt`} fill /> </Link>
+          
         </div>
 
 
