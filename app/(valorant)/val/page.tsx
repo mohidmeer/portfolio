@@ -1,18 +1,41 @@
+"use client";
+import { useEffect } from "react";
 import { Settings } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
-const page = () => {
+const Page = () => {
+
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPreloader(false);
+    }, 3000); // match your video length
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className='h-screen relative'>
       <BackGroundVideo />
       <Topbar />
       <MainContent />
+      {showPreloader && (
+        <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center transition-opacity duration-700">
+          <video
+            src="/val/defaultsplash.webm"
+            autoPlay
+            muted
+            playsInline
+            className="w-[800px] h-[800px] object-contain"
+          />
+        </div>
+      )}
     </main>
   )
 }
 
-export default page
+export default Page
 
 function MainContent() {
   const menus = ['PLAY', 'PROJECTS', 'Carrer', 'Battlepass', 'Collection', 'Store']
@@ -71,8 +94,6 @@ function ProfileItem() {
   )
 }
 
-
-
 function Topbar() {
   return (
     <div className='p-4 flex relative'>
@@ -93,7 +114,7 @@ function BackGroundVideo() {
       playsInline
       className="absolute w-full h-full object-cover -z-5  "
     >
-      <source src="/val/homepage.webm" type="video/mp4" />
+      <source src="/val/homepage.webm" type="video/webm" />
     </video>
   </>
   )
