@@ -9,7 +9,7 @@ const Page = () => {
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = setTimeout(() => { 
       setShowPreloader(false);
     }, 3000); // match your video length
     return () => clearTimeout(timer);
