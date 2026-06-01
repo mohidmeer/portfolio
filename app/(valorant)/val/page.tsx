@@ -71,7 +71,7 @@ function Sidebar() {
 function ProfileItem() {
   return (
     <div className=" flex border-t-2 border-white/50 cursor-pointer relative group">
-      <Image src="assets/profile.jpg" alt="profile" width={40} height={40} />
+      <Image src="/assets/profile.jpg" alt="profile" width={40} height={40} />
       <span className='size-2 rounded-full bg-val-primary bottom-1 right-1 absolute' />
       <div className='bg-white/60 w-[300px] absolute  group-hover:right-12 right-[-350px] top-1/2 -translate-y-1/2 rounded-md backdrop-blur-md transition-all'>
       

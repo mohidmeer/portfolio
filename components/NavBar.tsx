@@ -1,51 +1,60 @@
 'use client';
-import Link from "next/link"
-import { ThemeSwitch } from "./theme-switch"
+import Link from "next/link";
+import { ThemeSwitch } from "./theme-switch";
+import { cn } from "@/lib/utils";
 
 const menu_items = [
-    {
-        href: '#about',
-        label: 'About'
-    },
-    {
-        href: '#projects',
-        label: 'Projects'
-    },
-    {
-        href: '#experience',
-        label: 'Experience'
-    },
-    {
-        href: '#contact',
-        label: 'Contact'
-    },
-    
-]
-
-
-
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
+];
 
 const NavBar = () => {
-    return (
-        <div className="container mx-auto  items-center flex p-2" >
-            <nav className="gap-2 ml-auto relative">
-                    <ul className="flex items-center gap-6 justify-center border  relative py-3 px-2  sm:px-8 rounded-md bg-background/20 backdrop-blur-2xl ">
-                        {
-                            menu_items.map((i, z) => (
-                                <li className="group  flex flex-col items-center font-bold" key={z} >
-                                    <Link href={i.href} >{i.label}</Link>
-                                     <span className="w-0 group-hover:w-full duration-200   bg-primary h-[2px]" />
-                                </li>
-                            ))
-                        }
-                    </ul> 
-            </nav>
-            <div className="ml-auto">
-                <ThemeSwitch />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3">
+      <Link
+        href="#about"
+        className="font-bold text-lg tracking-tight hover:text-primary transition-colors shrink-0"
+      >
+        Mohid<span className="text-primary">.</span>
+      </Link>
 
-export default NavBar
+      <nav className="hidden sm:block">
+        <ul className="flex items-center gap-1 glass rounded-full px-2 py-1.5">
+          {menu_items.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={cn(
+                  "relative px-4 py-1.5 text-sm font-medium rounded-full",
+                  "text-muted-foreground hover:text-foreground transition-colors",
+                  "hover:bg-accent/50"
+                )}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
+      <div className="flex items-center gap-3 ml-auto sm:ml-0">
+        <nav className="sm:hidden">
+          <ul className="flex items-center gap-3 text-sm font-medium">
+            {menu_items.slice(0, 2).map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <ThemeSwitch />
+      </div>
+    </div>
+  );
+};
+
+export default NavBar;

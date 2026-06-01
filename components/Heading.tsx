@@ -1,26 +1,27 @@
-import React from 'react'
-import { Typewriter } from 'react-simple-typewriter'
+"use client";
 
-const Heading = ({heading,subheading}:{heading:string,subheading:string}) => {
-    return (
-        <div className="text-center mb-8">
-            
-            <h2 className="text-4xl font-bold ">
-                <Typewriter
-                    words={[heading]}
-                    loop={1}
-                    cursor
-                    cursorStyle="|"
-                    typeSpeed={70}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                />
-            </h2>
-            <p className="text-muted-foreground text-md mt-4">
-                {subheading}
-            </p>
-        </div>
-    )
+import { motion } from "framer-motion";
+
+interface HeadingProps {
+  heading: string;
+  subheading: string;
 }
 
-export default Heading
+const Heading = ({ heading, subheading }: HeadingProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+      className="text-center mb-12 max-w-2xl mx-auto"
+    >
+      <h2>{heading}</h2>
+      {subheading && (
+        <p className="text-muted-foreground mt-3 leading-relaxed">{subheading}</p>
+      )}
+    </motion.div>
+  );
+};
+
+export default Heading;
