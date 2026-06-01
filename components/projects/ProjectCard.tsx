@@ -23,7 +23,7 @@ function TechChip({ image }: { image: string }) {
       <Image
         height={28}
         width={28}
-        src={assetUrl(`/assets/icon/${image}`)}
+        src={assetUrl(`assets/icon/${image}`)}
         alt=""
         className="object-contain size-7"
       />
@@ -39,7 +39,7 @@ export default function ProjectCard({ data }: { data: Project }) {
       {/* Cover preview */}
       <div className="relative aspect-[16/10] overflow-hidden bg-muted/20">
         <Image
-          src={assetUrl(`/assets/projects/${coverImage.image}`)}
+          src={assetUrl(`assets/projects/${coverImage.image}`)}
           alt={`${data.title} preview`}
           fill
           className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

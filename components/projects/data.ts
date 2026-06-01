@@ -2,7 +2,7 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    logo: "/assets/projects/contentforge/logo.svg",
+    logo: "assets/projects/contentforge/logo.svg",
     title: "ContentForge",
     subtitle: "Multi-Tenant AI Content Automation",
     description:
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     },
   },
   {
-    logo: "/assets/projects/shoprai/logo.svg",
+    logo: "assets/projects/shoprai/logo.svg",
     title: "ShopRai",
     subtitle: "AI-Powered Comparison Platform",
     description:
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     },
   },
   {
-    logo: "/assets/projects/clipforge/logo.svg",
+    logo: "assets/projects/clipforge/logo.svg",
     title: "ClipForge",
     subtitle: "AI Video Automation Platform",
     description:
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     },
   },
   {
-    logo: "/assets/projects/socialmint/logo.png",
+    logo: "assets/projects/socialmint/logo.png",
     title: "Social Mint",
     subtitle: "Social Media Management Platform",
     description:
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     },
   },
   {
-    logo: "/assets/projects/pcfo/logo.svg",
+    logo: "assets/projects/pcfo/logo.svg",
     title: "Pocket CFO",
     subtitle: "Financial Software Marketplace",
     description:
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     },
   },
   {
-    logo: "/assets/projects/promptworks/logo.svg",
+    logo: "assets/projects/promptworks/logo.svg",
     title: "Prompt Buddy",
     subtitle: "AI Prompt Marketplace",
     description:

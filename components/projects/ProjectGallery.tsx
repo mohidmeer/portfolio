@@ -51,7 +51,7 @@ export default function ProjectGallery({ images, projectTitle }: ProjectGalleryP
                 className="absolute inset-0"
               >
                 <Image
-                  src={assetUrl(`/assets/projects/${active.image}`)}
+                  src={assetUrl(`assets/projects/${active.image}`)}
                   alt={`${projectTitle} — ${active.title}`}
                   fill
                   className="object-contain object-top p-1"
@@ -110,7 +110,7 @@ export default function ProjectGallery({ images, projectTitle }: ProjectGalleryP
               aria-label={`View ${img.title}`}
             >
               <Image
-                src={assetUrl(`/assets/projects/${img.image}`)}
+                src={assetUrl(`assets/projects/${img.image}`)}
                 alt={img.title}
                 fill
                 className="object-cover object-top"

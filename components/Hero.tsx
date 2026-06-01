@@ -5,12 +5,13 @@ import { Typewriter } from "react-simple-typewriter";
 import { ArrowDown, Mail } from "lucide-react";
 import SpotLight from "./SpotLight";
 import { buttonVariants } from "@/components/ui/button";
+import { assetUrl } from "@/lib/asset-url";
 
 const Hero = () => {
   return (
     <div className="relative min-h-[85vh] flex items-center mt-16 overflow-hidden" id="about">
       <Image
-        src="/assets/hero.svg"
+        src={assetUrl("assets/hero.svg")}
         fill
         alt=""
         className="object-cover opacity-40 dark:opacity-20 pointer-events-none"
@@ -79,25 +80,25 @@ export default Hero;
 
 function SideArt() {
   const files = [
-    "/assets/icon/docker.svg",
-    "/assets/icon/mongodb.svg",
-    "/assets/icon/vs-code.svg",
-    "/assets/icon/react.svg",
-    "/assets/icon/nextjs.svg",
-    "/assets/icon/typescript.svg",
-    "/assets/icon/prisma.svg",
-    "/assets/icon/postgresql.svg",
-    "/assets/icon/html.svg",
-    "/assets/icon/laravel.svg",
-    "/assets/icon/figma.svg",
-    "/assets/icon/css.svg",
-    "/assets/icon/git.svg",
-    "/assets/icon/jira.svg",
-    "/assets/icon/python.svg",
-    "/assets/icon/graphql.svg",
-    "/assets/icon/nginx.svg",
-    "/assets/icon/gcloud.svg",
-    "/assets/icon/amazon.svg",
+    "assets/icon/docker.svg",
+    "assets/icon/mongodb.svg",
+    "assets/icon/vs-code.svg",
+    "assets/icon/react.svg",
+    "assets/icon/nextjs.svg",
+    "assets/icon/typescript.svg",
+    "assets/icon/prisma.svg",
+    "assets/icon/postgresql.svg",
+    "assets/icon/html.svg",
+    "assets/icon/laravel.svg",
+    "assets/icon/figma.svg",
+    "assets/icon/css.svg",
+    "assets/icon/git.svg",
+    "assets/icon/jira.svg",
+    "assets/icon/python.svg",
+    "assets/icon/graphql.svg",
+    "assets/icon/nginx.svg",
+    "assets/icon/gcloud.svg",
+    "assets/icon/amazon.svg",
   ];
 
   const midpoint = Math.ceil(files.length / 2);
@@ -116,7 +117,7 @@ function SideArt() {
               className="rounded-full relative h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:w-16 lg:h-16 animate-counter-spin-slow bg-background/80 backdrop-blur-sm border border-border/30 p-2 shadow-sm"
               style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
             >
-              <Image src={file} alt="" fill className="p-1.5 object-contain" />
+              <Image src={assetUrl(file)} alt="" fill className="p-1.5 object-contain" />
             </div>
           </div>
         );
@@ -131,7 +132,7 @@ function SideArt() {
                 className="rounded-full relative h-8 w-8 md:h-10 md:w-10 lg:w-12 lg:h-12 animate-counter-spin-slow bg-background/80 backdrop-blur-sm border border-border/30 p-1.5 shadow-sm"
                 style={{ animationDelay: `-${(rotation / 360) * 100}s` }}
               >
-                <Image src={file} alt="" fill className="rotate-[-30deg] p-1 object-contain" />
+                <Image src={assetUrl(file)} alt="" fill className="rotate-[-30deg] p-1 object-contain" />
               </div>
             </div>
           );
@@ -141,7 +142,7 @@ function SideArt() {
       <div className="absolute">
         <div className="rounded-full relative w-12 h-12 sm:w-16 sm:h-16 animate-counter-spin-slow bg-background border-2 border-primary/30 p-2 shadow-lg shadow-primary/10">
           <Link href="/val">
-            <Image src="/assets/icon/valorant.svg" alt="Valorant easter egg" fill className="p-1.5 object-contain" />
+            <Image src={assetUrl("assets/icon/valorant.svg")} alt="Valorant easter egg" fill className="p-1.5 object-contain" />
           </Link>
         </div>
       </div>
