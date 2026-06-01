@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, Github, Images } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -15,16 +15,17 @@ import SpotLight from "@/components/SpotLight";
 import { assetUrl } from "@/lib/asset-url";
 import { Project } from "./types";
 import ProjectGallery from "./ProjectGallery";
+import ProjectCaseStudy from "./ProjectCaseStudy";
 
 function TechChip({ image }: { image: string }) {
   return (
-    <div className="flex items-center justify-center size-9 rounded-md bg-muted/50 border border-border/50 p-1.5 transition-colors hover:bg-muted">
+    <div className="flex items-center justify-center size-11 rounded-md bg-muted/50 border border-border/50 p-2 transition-colors hover:bg-muted">
       <Image
-        height={24}
-        width={24}
+        height={28}
+        width={28}
         src={assetUrl(`/assets/icon/${image}`)}
         alt=""
-        className="object-contain"
+        className="object-contain size-7"
       />
     </div>
   );
@@ -58,19 +59,21 @@ export default function ProjectCard({ data }: { data: Project }) {
           </div>
         </div>
 
-        <Link
-          href={data.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={buttonVariants({
-            variant: "secondary",
-            size: "icon",
-            className: "absolute top-3 right-3 size-9 rounded-full shadow-md backdrop-blur-sm",
-          })}
-          aria-label={`View ${data.title} on GitHub`}
-        >
-          <Github className="size-4" />
-        </Link>
+        {data.github && (
+          <Link
+            href={data.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({
+              variant: "secondary",
+              size: "icon",
+              className: "absolute top-3 right-3 size-9 rounded-full shadow-md backdrop-blur-sm",
+            })}
+            aria-label={`View ${data.title} on GitHub`}
+          >
+            <Github className="size-4" />
+          </Link>
+        )}
       </div>
 
       {/* Content */}
@@ -79,9 +82,12 @@ export default function ProjectCard({ data }: { data: Project }) {
           <h4 className="text-xl font-bold tracking-tight">{data.title}</h4>
           <p className="text-sm text-primary font-medium mt-0.5">{data.subtitle}</p>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed flex-grow line-clamp-3">
-          {data.description}
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+            {data.description}
+          </p>
+          <ProjectCaseStudy data={data} />
+        </div>
 
         <div className="flex flex-wrap gap-2 pt-1">
           {data.stack.map((icon) => (
@@ -90,54 +96,53 @@ export default function ProjectCard({ data }: { data: Project }) {
         </div>
 
         <Dialog>
-          <DialogTrigger
-            className={buttonVariants({
-              variant: "outline",
-              className: "w-full mt-2 gap-2",
-            })}
-          >
-            <Images className="size-4" />
-            View Screenshots
-            <span className="ml-auto text-xs text-muted-foreground">
-              {data.images.length} screens
-            </span>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="w-full gap-2 mt-2">
+              <Images className="size-4" />
+              View Screenshots
+              <span className="ml-auto text-xs text-muted-foreground">
+                {data.images.length} screens
+              </span>
+            </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-4xl w-[95vw] p-0 gap-0 overflow-hidden">
-            <DialogHeader className="px-6 pt-6 pb-4 border-b border-border/50">
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-lg bg-muted p-1.5 shrink-0">
-                  <Image
-                    width={32}
-                    height={32}
-                    src={assetUrl(data.logo)}
-                    alt=""
-                    className="object-contain size-full"
-                  />
+            <DialogContent className="max-w-4xl w-[95vw] p-0 gap-0 overflow-hidden">
+              <DialogHeader className="px-6 pt-6 pb-4 border-b border-border/50">
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-lg bg-muted p-1.5 shrink-0">
+                    <Image
+                      width={32}
+                      height={32}
+                      src={assetUrl(data.logo)}
+                      alt=""
+                      className="object-contain size-full"
+                    />
+                  </div>
+                  <div className="text-left">
+                    <DialogTitle className="text-lg">{data.title}</DialogTitle>
+                    <p className="text-sm text-muted-foreground">{data.subtitle}</p>
+                  </div>
+                  {data.github && (
+                    <Link
+                      href={data.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={buttonVariants({
+                        variant: "ghost",
+                        size: "sm",
+                        className: "ml-auto gap-1.5 shrink-0",
+                      })}
+                    >
+                      <ExternalLink className="size-3.5" />
+                      Source
+                    </Link>
+                  )}
                 </div>
-                <div className="text-left">
-                  <DialogTitle className="text-lg">{data.title}</DialogTitle>
-                  <p className="text-sm text-muted-foreground">{data.subtitle}</p>
-                </div>
-                <Link
-                  href={data.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={buttonVariants({
-                    variant: "ghost",
-                    size: "sm",
-                    className: "ml-auto gap-1.5 shrink-0",
-                  })}
-                >
-                  <ExternalLink className="size-3.5" />
-                  Source
-                </Link>
+              </DialogHeader>
+              <div className="p-6 overflow-y-auto max-h-[75vh] scrollbar-thin">
+                <ProjectGallery images={data.images} projectTitle={data.title} />
               </div>
-            </DialogHeader>
-            <div className="p-6 overflow-y-auto max-h-[75vh] scrollbar-thin">
-              <ProjectGallery images={data.images} projectTitle={data.title} />
-            </div>
-          </DialogContent>
-        </Dialog>
+            </DialogContent>
+          </Dialog>
       </div>
 
       <SpotLight clas="bg-primary/30 bottom-0 left-1/2 -translate-x-1/2 blur-[80px] w-[200px] h-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
