@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Settings } from 'lucide-react'
 import Image from 'next/image'
 import { assetUrl } from "@/lib/asset-url";
